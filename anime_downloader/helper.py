@@ -31,8 +31,8 @@ def get_airing_anime():
         A dictionary containing the airing anime data, or None if the request fails.
     """
     try:
-        http = urllib3.PoolManager(10, headers={"Referer": "https://kwik.cx/", "Accept": "","Connection": "Keep-Alive","Accept-Encoding": "gzip, deflate, br","Accept-Language": "en-US,en;q=0.9","User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"})
-        res = "https://animepahe.ru/api?m=airing&page1"
+        http = urllib3.PoolManager(10, headers={"Referer": "https://kwik.si/", "Accept": "","Connection": "Keep-Alive","Accept-Encoding": "gzip, deflate, br","Accept-Language": "en-US,en;q=0.9","User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"})
+        res = "https://animepahe.si/api?m=airing&page1"
         r = http.request("GET", res, preload_content=False)
         return json.loads(r.data)
     except (urllib3.exceptions.MaxRetryError, json.JSONDecodeError) as e:
